@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+
+<html>
+   <head>
+    <h1>A Question</h1>
+    <label for="fname">Your Response</label>
+  <input type="text" id="chattext"><br><br>
+
+  <button onclick="sendChat()">send</button>
+
+      <script type = "text/javascript">
+
+
+         function sendChat() {
+
+              //var ws = new WebSocket("wss://websocket.jieguann.com");
+             var ws = new WebSocket("ws://127.0.0.1:1880/response");
+              // var ws = new WebSocket("ws://localhost:8080");
+if ("WebSocket" in window) {
+ws.onopen = function() {
+             ws.send(document.getElementById('chattext').value)
+        document.getElementById('chattext').value = null;                 //alert("Message is sent...");
+               };
+         }
+         console.log(document.getElementById('chattext').value )
+
+         //console.log(document.getElementById('chattext').value)
+
+      }
+
+
+
+      </script>
+
+   </head>
+
+   <body>
+      </div>
+   </body>
+</html>
