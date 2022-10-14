@@ -1,0 +1,8 @@
+#!/bin/sh
+
+launchDir="`pwd`"
+
+cd /bish/program/svg2gcode_grbl
+python3 c.py $launchDir $1 $2
+
+
